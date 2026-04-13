@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox prefHeight="820.0" prefWidth="1280.0" spacing="0.0" styleClass="app-root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.IndexController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="top-nav">
+            <padding>
+                <Insets top="20.0" right="24.0" bottom="20.0" left="24.0" />
+            </padding>
+            <Label styleClass="brand-label" text="Blox Fruit Formations" />
+            <Button onAction="#ouvrirIndex" styleClass="nav-button nav-button-active" text="Accueil" />
+            <Button onAction="#ouvrirFormations" styleClass="nav-button" text="Formations" />
+            <Button onAction="#ouvrirSessions" styleClass="nav-button" text="Sessions" />
+            <Button onAction="#ouvrirFormateurs" styleClass="nav-button" text="Formateurs" />
+            <Button onAction="#ouvrirApprenants" styleClass="nav-button" text="Apprenants" />
+            <Button onAction="#ouvrirInscriptions" styleClass="nav-button" text="Inscriptions" />
+            <Button onAction="#ouvrirPresences" styleClass="nav-button" text="Presences" />
+            <Button onAction="#ouvrirAvis" styleClass="nav-button" text="Avis" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="navUserLabel" styleClass="nav-user" text="visiteur@local" />
+            <Button onAction="#deconnecter" styleClass="secondary-button" text="Deconnexion" />
+        </HBox>
+
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="home-scroll" VBox.vgrow="ALWAYS">
+            <content>
+                <VBox alignment="TOP_CENTER" fillWidth="true" spacing="24.0" styleClass="content-wrap home-shell">
+                    <padding>
+                        <Insets top="30.0" right="28.0" bottom="28.0" left="28.0" />
+                    </padding>
+                    <VBox maxWidth="1280.0" spacing="24.0" styleClass="home-content">
+                        <VBox alignment="CENTER" spacing="18.0" styleClass="hero-card home-hero-card">
+                            <padding>
+                                <Insets top="40.0" right="32.0" bottom="40.0" left="32.0" />
+                            </padding>
+                            <Label styleClass="badge-pill" text="BLOX FRUIT FORMATIONS" />
+                            <Label styleClass="hero-title home-hero-title" text="Bienvenue dans l'espace de pilotage des formations" wrapText="true" />
+                            <Label styleClass="hero-subtitle home-hero-subtitle" text="Planifie, suis et rejoins les sessions en quelques clics." wrapText="true" />
+                            <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="16.0" prefWrapLength="740.0" rowValignment="CENTER" vgap="12.0" styleClass="home-stats">
+                                <children>
+                                    <VBox alignment="CENTER" spacing="6.0" styleClass="stat-card home-stat-card">
+                                        <Label fx:id="formationsCountLabel" styleClass="stat-number" text="0" />
+                                        <Label styleClass="stat-label" text="Formations" />
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="6.0" styleClass="stat-card home-stat-card">
+                                        <Label fx:id="sessionCountLabel" styleClass="stat-number" text="0" />
+                                        <Label styleClass="stat-label" text="Sessions" />
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="6.0" styleClass="stat-card home-stat-card">
+                                        <Label fx:id="tauxPresenceLabel" styleClass="stat-number" text="0%" />
+                                        <Label styleClass="stat-label" text="Taux présence" />
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="6.0" styleClass="stat-card home-stat-card">
+                                        <Label fx:id="moyenneAvisLabel" styleClass="stat-number" text="0/5" />
+                                        <Label styleClass="stat-label" text="Moyenne avis" />
+                                    </VBox>
+                                    <VBox alignment="CENTER" spacing="6.0" styleClass="stat-card home-stat-card">
+                                        <Label fx:id="currentProfileLabel" styleClass="stat-number" text="Visiteur" />
+                                        <Label fx:id="currentProfileHintLabel" styleClass="stat-label" text="Profil courant" />
+                                    </VBox>
+                                </children>
+                            </FlowPane>
+                        </VBox>
+
+                        <VBox spacing="10.0">
+                            <Label styleClass="section-title" text="Dashboard" />
+                            <Label styleClass="section-subtitle" text="Visualise les indicateurs principaux en un coup d'œil." wrapText="true" />
+                        </VBox>
+
+                        <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="18.0" prefWrapLength="980.0" rowValignment="CENTER" vgap="18.0" styleClass="dashboard-charts">
+                            <children>
+                                <StackPane styleClass="donut-card">
+                                    <children>
+                                        <PieChart fx:id="sessionsDonutChart" styleClass="donut-chart" />
+                                        <Circle radius="64.0" styleClass="donut-hole" />
+                                        <VBox alignment="CENTER" spacing="4.0" mouseTransparent="true" styleClass="donut-center">
+                                            <Label fx:id="sessionsDonutValueLabel" styleClass="donut-value" text="0" />
+                                            <Label styleClass="donut-title" text="Sessions actives" />
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+
+                                <StackPane styleClass="donut-card">
+                                    <children>
+                                        <PieChart fx:id="presenceDonutChart" styleClass="donut-chart" />
+                                        <Circle radius="64.0" styleClass="donut-hole" />
+                                        <VBox alignment="CENTER" spacing="4.0" mouseTransparent="true" styleClass="donut-center">
+                                            <Label fx:id="presenceDonutValueLabel" styleClass="donut-value" text="0%" />
+                                            <Label styleClass="donut-title" text="Taux presence" />
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+
+                                <StackPane styleClass="donut-card">
+                                    <children>
+                                        <PieChart fx:id="avisDonutChart" styleClass="donut-chart" />
+                                        <Circle radius="64.0" styleClass="donut-hole" />
+                                        <VBox alignment="CENTER" spacing="4.0" mouseTransparent="true" styleClass="donut-center">
+                                            <Label fx:id="avisDonutValueLabel" styleClass="donut-value" text="0/5" />
+                                            <Label styleClass="donut-title" text="Moyenne avis" />
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </FlowPane>
+
+                        <VBox spacing="10.0">
+                            <Label styleClass="section-title" text="Sessions actives" />
+                            <Label styleClass="section-subtitle" text="Consulte les sessions disponibles et suis leur avancement en direct." wrapText="true" />
+                        </VBox>
+
+                        <VBox alignment="CENTER" spacing="10.0" styleClass="empty-state-box">
+                            <padding>
+                                <Insets top="30.0" right="24.0" bottom="30.0" left="24.0" />
+                            </padding>
+                            <Label styleClass="empty-state-title" text="Aucune session disponible" />
+                            <Label styleClass="empty-state-subtitle" text="Aucune session n'est planifiee pour le moment." wrapText="true" />
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>
+

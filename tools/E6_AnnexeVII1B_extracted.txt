@@ -1,0 +1,120 @@
+﻿BTS 
+SERVICES INFORMATIQU
+ES AUX ORGANISATIONS
+SESSION 
+2026
+ANNEXE VII
+-
+1
+-
+B
+: 
+Fiche descriptive de réalisation professionnelle (recto)
+Épreuve 
+E6
+-
+)
+N° 
+réalisation
+:
+Nom,
+prénom :
+N° candidat
+:
+Épreuve ponctuelle
+Contrôle en cours de formation
+Date : 
+...... / ...... /............
+................................
+.......
+C
+oncevoir et développer une solution applicative
+A
+G
+érer les données
+Conditions de réalisa
+tion
+1
+(ressources fournies, résultats attendus)
+Description des ressources
+documentaires,
+matér
+ielles et logicielles utilisées
+2
+Mo
+3
+et à l
+eur
+documentation
+4
+1
+En référence aux 
+conditions de réalisation et ressources nécessaires
+du bloc «
+Conception et développement d'application
+s
+» prévues dans le 
+référentiel de certification du BTS SIO.
+2
+Les réalisations professionnelles sont
+du 
+référentiel du BTS SIO
+.
+3
+Conformément 
+au référentiel du BTS SIO «
+Dans tous les cas, les candidats doivent se munir des outils et ressources techniques nécessaires au 
+L
+a circulaire nationale 
+s qui ne se seraient pas 
+». Les éléments peuvent
+être un 
+identifiant, 
+un 
+mot de passe, 
+une 
+adresse réticulaire 
+4
+Lien vers 
+la documentation
+complète, précisant et 
+décrivant
+la 
+r
+éalisation professionnelle, 
+par exemple
+s
+service fourni par la 
+réalisation
+, interfaces utilisateurs, description des classes
+ou
+de la base de données
+.
+
+BTS 
+SERVICES INFORMATIQU
+ES AUX 
+ORGANISATIONS
+SESSION 
+2026
+ANNEXE VII
+-
+1
+-
+B
+: 
+Fiche descriptive de réalisation professionnelle 
+(verso, éventuellement pages suivantes)
+Épreuve 
+E6
+-
+s
+(option SLAM)
+Descriptif de la 
+réalisation
+professionnelle
+, y 
+compris l
+es productions réalisées et schémas explicatifs
+
+

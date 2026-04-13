@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="760.0" prefWidth="1180.0" styleClass="app-root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.AuthViewController">
+    <children>
+        <VBox alignment="CENTER" maxWidth="560.0" spacing="16.0" styleClass="hero-card">
+            <padding>
+                <Insets top="36.0" right="36.0" bottom="36.0" left="36.0" />
+            </padding>
+            <Label styleClass="badge-pill" text="INSCRIPTION" />
+            <Label styleClass="hero-title" text="Creer un compte utilisateur" />
+            <Label styleClass="hero-subtitle" text="Renseigne tes informations pour creer un nouveau compte." wrapText="true" />
+            <TextField promptText="Prenom" styleClass="input-field" />
+            <TextField promptText="Nom" styleClass="input-field" />
+            <TextField promptText="Email" styleClass="input-field" />
+            <PasswordField promptText="Mot de passe" styleClass="input-field" />
+            <Button styleClass="primary-button" text="Creer le compte" />
+            <HBox alignment="CENTER" spacing="10.0">
+                <Label styleClass="status-label" text="Deja inscrit ?" />
+                <Button onAction="#ouvrirLogin" styleClass="link-button" text="Retour login" />
+            </HBox>
+        </VBox>
+    </children>
+</StackPane>
+

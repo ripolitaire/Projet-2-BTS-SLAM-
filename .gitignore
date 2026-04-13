@@ -1,0 +1,44 @@
+# Java / build outputs
+bin/
+out/
+target/
+build/
+*.class
+hs_err_pid*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# VS Code (keep extensions.json, ignore machine-specific config)
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# NetBeans
+nbproject/private/
+build.xml
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Codex / misc
+.sixth/
+

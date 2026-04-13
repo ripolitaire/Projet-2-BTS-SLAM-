@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="820.0" prefWidth="1280.0" spacing="0.0" styleClass="app-root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.NavigationController">
+    <children>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="top-nav">
+            <padding>
+                <Insets top="20.0" right="24.0" bottom="20.0" left="24.0" />
+            </padding>
+            <Label styleClass="brand-label" text="Blox Fruit Formations" />
+            <Button onAction="#ouvrirIndex" styleClass="nav-button" text="Accueil" />
+            <Button onAction="#ouvrirFormations" styleClass="nav-button nav-button-active" text="Formations" />
+            <Button onAction="#ouvrirSessions" styleClass="nav-button" text="Sessions" />
+            <Button onAction="#ouvrirFormateurs" styleClass="nav-button" text="Formateurs" />
+            <Button onAction="#ouvrirApprenants" styleClass="nav-button" text="Apprenants" />
+            <Button onAction="#ouvrirInscriptions" styleClass="nav-button" text="Inscriptions" />
+            <Button onAction="#ouvrirPresences" styleClass="nav-button" text="Presences" />
+            <Button onAction="#ouvrirAvis" styleClass="nav-button" text="Avis" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#deconnecter" styleClass="secondary-button" text="Deconnexion" />
+        </HBox>
+
+        <VBox spacing="20.0" styleClass="content-wrap" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="26.0" right="28.0" bottom="28.0" left="28.0" />
+            </padding>
+            <VBox spacing="14.0" styleClass="hero-card">
+                <padding><Insets top="20.0" right="20.0" bottom="20.0" left="20.0" /></padding>
+                <Label styleClass="badge-pill" text="FORMATIONS" />
+                <Label styleClass="hero-title" text="Gestion des formations" />
+            </VBox>
+            <TableView styleClass="session-table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Titre" />
+                    <TableColumn text="Categorie" />
+                    <TableColumn text="Niveau" />
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
+</VBox>
+
