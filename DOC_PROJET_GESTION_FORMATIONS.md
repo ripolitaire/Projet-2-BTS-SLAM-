@@ -312,9 +312,10 @@ bin/             (sortie compilation)
   - `FormateurService` : données en dur (liste + ajout simulé)
   - `InscriptionService` : map en mémoire `email -> Set<idSession>`
 
-## 9) Contrats API attendus (résumé)
+## 9) API consommée (endpoints réellement appelés)
 
-L’application attend une API REST (ou compatible) dont les réponses sont du JSON.
+L’application consomme une API REST (ou compatible) dont les réponses sont du JSON.
+Les routes ci-dessous correspondent aux appels effectués par les classes `app.service.*`.
 
 ### Authentification
 
@@ -326,14 +327,14 @@ L’application attend une API REST (ou compatible) dont les réponses sont du J
   - `{ "email": "...", "mot_de_passe": "..." }`
   - `{ "email": "...", "password": "...", "mot_de_passe": "..." }`
 
-Réponse attendue :
+Réponse gérée :
 
 - statut : `200` ou `201`
 - JSON contenant un champ token :
   - `"token"` ou `"accessToken"` ou `"jwt"`
 - (optionnel) `"role"` et `"email"`
 
-Après login : les appels API mettent `Authorization: Bearer <token>` si disponible.
+Après login : les appels API envoient `Authorization: Bearer <token>` si disponible.
 
 ### Ressources métiers
 
@@ -343,7 +344,7 @@ Après login : les appels API mettent `Authorization: Bearer <token>` si disponi
   - `id_apprenant`, `pseudo` (optionnel), `prenom`, `nom`, `email`, `telephone` (optionnel), `mot_de_passe` (optionnel), `role`
 - `POST /api/apprenants` (Content-Type: application/json) :
   - envoie `prenom`, `nom`, `email`, `mot_de_passe`, `role`
-  - attend un `201`
+  - succès si `201`
 
 2) **Formations**
 
@@ -361,14 +362,14 @@ Après login : les appels API mettent `Authorization: Bearer <token>` si disponi
 - `GET /api/presences` → objets : `id_presence`, `id_session`, `id_apprenant`, `present` (bool)
 - `PUT /api/presences/{id_presence}` :
   - envoie `id_session`, `id_apprenant`, `present`
-  - attend `200`
+  - succès si `200`
 
 5) **Avis**
 
 - `GET /api/avis` → objets : `id_avis`, `id_session`, `id_apprenant`, `commentaire`, `note`
 - `POST /api/avis/me` :
   - envoie `id_session`, `commentaire`, `note`
-  - attend `201`
+  - succès si `201`
 
 ## 10) UI / Thème
 
