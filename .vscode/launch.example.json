@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch App (Example)",
+            "request": "launch",
+            "mainClass": "app.Main",
+            "cwd": "${workspaceFolder}",
+            "classPaths": [
+                "${workspaceFolder}/bin",
+                "${workspaceFolder}/src",
+                "${env:JACKSON_HOME}/jackson-annotations-2.15.2.jar",
+                "${env:JACKSON_HOME}/jackson-core-2.15.2.jar",
+                "${env:JACKSON_HOME}/jackson-databind-2.15.2.jar"
+            ],
+            "vmArgs": "--module-path \"${env:JAVAFX_HOME}/lib;${env:JACKSON_HOME}\" --add-modules javafx.controls,javafx.fxml,javafx.web,javafx.media,javafx.swing,javafx.swt"
+        }
+    ]
+}
+

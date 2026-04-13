@@ -1,6 +1,45 @@
-# Documentation complète — JavaFxProjectGestionFormations
+# Documentation — Projet 2 BTS SLAM (JavaFX) : Gestion des formations
 
-Date de génération : 08/04/2026 (Europe/Paris)
+Date de mise à jour : 13/04/2026 (Europe/Paris)
+
+Cette documentation couvre :
+- l’installation (poste de dev)
+- la configuration (JavaFX, variables d’environnement, API)
+- le lancement (VS Code / ligne de commande)
+- le périmètre fonctionnel (écrans) et un guide utilisateur
+- l’architecture (packages, contrôleurs, services)
+- les contrats API attendus
+
+## 0) Démarrage rapide
+
+1) Pré-requis :
+- JDK 17+
+- JavaFX SDK (ex: 17.x)
+- une API HTTP compatible (par défaut `http://localhost:3000`)
+
+2) Configuration API (optionnel) :
+- variable d’environnement `API_BASE_URL` (sinon `http://localhost:3000`)
+
+3) Lancement recommandé :
+- ouvrir le dossier du projet dans VS Code
+- configurer JavaFX/Jackson localement (voir section 5 et les templates `.vscode/settings.example.json` + `.vscode/launch.example.json`)
+- lancer `app.Main` (configuration “Launch App”)
+
+## Sommaire
+
+- [1) Présentation](#1-présentation)
+- [2) Périmètre fonctionnel (écrans)](#2-périmètre-fonctionnel-écrans)
+- [2.1) Guide utilisateur (parcours)](#21-guide-utilisateur-parcours)
+- [3) Stack technique](#3-stack-technique)
+- [4) Dépendances & frameworks](#4-dépendances--frameworks-toutes-celles-déclarées--utilisées)
+- [5) Pré-requis & installation (poste de dev)](#5-pré-requis--installation-poste-de-dev)
+- [6) Configuration applicative](#6-configuration-applicative)
+- [7) Lancement / exécution](#7-lancement--exécution)
+- [8) Architecture du projet](#8-architecture-du-projet)
+- [9) Contrats API attendus](#9-contrats-api-attendus-résumé)
+- [10) UI / Thème](#10-ui--thème)
+- [11) Limites / améliorations](#11-remarques-limites-et-améliorations-possibles-technique)
+- [12) Annexes](#12-annexes--mapping-vues--contrôleurs)
 
 ## 1) Présentation
 
@@ -38,6 +77,28 @@ Les vues sont dans `src/app/view/*.fxml` et le thème dans `src/app/view/app-the
 - `inscriptions.fxml` (contrôleur `app.controller.NavigationController`) : écran inscriptions (**mock** côté client via `InscriptionService`)
 - `presences.fxml` (contrôleur `app.controller.NavigationController`) : écran présences (navigation, logique de présence principalement dans le détail session)
 - `avis.fxml` (contrôleur `app.controller.NavigationController`) : écran avis (navigation, logique dans détail session)
+
+## 2.1) Guide utilisateur (parcours)
+
+### Connexion
+
+1) Écran `accueil.fxml` : cliquer sur “Login”.
+2) Écran `login.fxml` : saisir email + mot de passe, puis valider.
+3) Si l’API répond avec un token, l’application ouvre le tableau de bord `index.fxml`.
+
+### Naviguer dans l’application
+
+- Le menu/les boutons de navigation chargent les FXML correspondants.
+- Le tableau de bord (`index.fxml`) affiche des statistiques calculées à partir des données renvoyées par l’API.
+
+### Exemple de flux “session”
+
+1) Ouvrir la liste des sessions (`sessions.fxml`).
+2) Sélectionner une session pour accéder au détail (`sessions-detail.fxml`).
+3) Consulter les présences et les avis liés à la session.
+4) Selon l’interface, il est possible :
+   - de modifier des présences (mise à jour via l’API)
+   - d’ajouter un avis (POST via l’API)
 
 ## 3) Stack technique
 
@@ -120,6 +181,16 @@ Pour rendre le projet portable :
 - copier les JARs JavaFX/Jackson dans `lib/`
 - remplacer les chemins absolus par `lib/**/*.jar` dans `.vscode/settings.json`
 - ajuster `launch.json` (module-path) en pointant vers le dossier `lib/`
+
+### Templates VS Code (recommandé pour GitHub)
+
+Dans ce dépôt, les fichiers `.vscode/settings.json` et `.vscode/launch.json` ne sont pas versionnés (ils contiennent des chemins machine).
+
+Des exemples sont fournis :
+- `.vscode/settings.example.json`
+- `.vscode/launch.example.json`
+
+Copier ces fichiers en `settings.json` / `launch.json` et adapter les variables d’environnement (ex: `JAVAFX_HOME`, `JACKSON_HOME`).
 
 ## 6) Configuration applicative
 

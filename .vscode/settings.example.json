@@ -1,0 +1,19 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "${env:JACKSON_HOME}/jackson-annotations-2.15.2.jar",
+        "${env:JACKSON_HOME}/jackson-core-2.15.2.jar",
+        "${env:JACKSON_HOME}/jackson-databind-2.15.2.jar",
+        "${env:JAVAFX_HOME}/lib/javafx.base.jar",
+        "${env:JAVAFX_HOME}/lib/javafx.controls.jar",
+        "${env:JAVAFX_HOME}/lib/javafx.fxml.jar",
+        "${env:JAVAFX_HOME}/lib/javafx.graphics.jar",
+        "${env:JAVAFX_HOME}/lib/javafx.media.jar",
+        "${env:JAVAFX_HOME}/lib/javafx.swing.jar",
+        "${env:JAVAFX_HOME}/lib/javafx.web.jar",
+        "${env:JAVAFX_HOME}/lib/javafx-swt.jar"
+    ]
+}
+
